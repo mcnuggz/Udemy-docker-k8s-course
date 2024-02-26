@@ -1,0 +1,29 @@
+A list of commands used to complete this assignment:
+
+1)
+docker build . (twice, once for each directory)
+
+2)
+docker run -i -t bbc (for python image name)
+docker run -p 3000:3000 75a (for node image name)
+
+3)
+docker run -p 3000:3000 -d --name nodeDockerMagic 75a
+docker stop nodeDockerMagic
+docker start nodeDockerMagic
+
+docker run -p 3000:3000 -d --name nodeDockerMagic bbc
+docker stop pythonAssignment
+docker start pythonAssignment
+
+4)
+docker rm pythonAssignment nodeDockerMagic
+docker image prune -a
+
+5)
+docker build -t pythondocker:latest .
+docker build -t nodedockerimage:latest .
+
+6)
+docker run -p 3000:3000 --rm --name nodedock nodedockerimage:latest
+docker run -it --rm --name pythonassignment pythondocker:latest
